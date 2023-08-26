@@ -1,0 +1,277 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+p {
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+img {
+    width: 100%;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+.header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.header-content img {
+    width: 50%;
+}
+
+.header-content p {
+    font-size: 25px;
+    padding: 10px;
+}
+
+.header-content h1 {
+    color: rgb(68, 10, 68);
+}
+
+@media(max-width:1200px) {
+    .container {
+        padding: 0 30px;
+    }
+
+    .header-content p {
+        font-size: 22px;
+        text-align: center;
+        width: 60%;
+    }
+
+
+}
+
+@media(max-width:1024px) {
+
+    .header-content p {
+        font-size: 20px;
+    }
+
+
+}
+@media screen and (max-width:768px) {
+   .header-content p{
+    text-align: center;
+    width: 100%;
+   }
+      
+  }
+
+@media (min-width:320px) and (max-width:480px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .header-content p {
+        font-size: 20px;
+      
+    }
+
+
+}
+
+/***********************SECTION****************************  */
+.section-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.big-part {
+    grid-column: 2 span;
+    grid-row: 2 span;
+}
+
+.big-part img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.small-part {
+    display: flex;
+    background-color: purple;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    padding-top: 10px;
+}
+
+.small-part h3 {
+    color: aliceblue;
+}
+
+.small-part p {
+    font-size: 20px;
+    color: aliceblue;
+    padding: 10px;
+}
+
+.small-part li {
+    display: inline-block;
+    margin: 15px;
+}
+
+.small-part a {
+    color: aliceblue;
+    font-size: 25px;
+}
+
+.small-part1 {
+    background-color: rgb(214, 88, 109);
+}
+
+.small-part:nth-child(n+3) a {
+    font-size: 45px;
+
+}
+
+@media screen and (max-width:1200px) {
+    .container {
+        padding: 0 40px;
+    }
+
+}
+
+@media screen and (max-width:768px) {
+    .container {
+        padding: 0 40px;
+    }
+
+    .big-part {
+        grid-column: 4 span;
+
+    }
+
+    .small-part {
+        grid-column: 2 span;
+        padding: 25px;
+    }
+
+}
+@media screen and (min-width:320px) and (max-width:480px) {
+    .container{
+        padding: 0 15px;
+    }
+    .small-part {
+        grid-column: 4 span;
+      padding: 10px;
+      
+    }
+
+
+}
+
+
+
+
+
+
+/* ****************FOOTER******************** */
+footer {
+    padding: 30px 0;
+    margin-top: 20px;
+    background: rgb(63, 94, 251);
+    background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
+    text-align: center;
+    font-size: 22px;
+    color: aliceblue;
+}
+/* ***************LOAD************* */
+.load{
+    display: grid;
+    place-items: center;
+    position: fixed;
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    animation-name: Loading;
+    animation-duration: 4s;
+    animation-fill-mode:forwards;
+  }
+
+.half-circle-spinner, .half-circle-spinner * {
+    box-sizing: border-box;
+  }
+
+  .half-circle-spinner {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    position: relative;
+  }
+
+  .half-circle-spinner .circle {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    border: calc(60px / 10) solid transparent;
+  }
+
+  .half-circle-spinner .circle.circle-1 {
+    border-top-color: #ff1d5e;
+    animation: half-circle-spinner-animation 1s infinite;
+  }
+
+  .half-circle-spinner .circle.circle-2 {
+    border-bottom-color: #ff1d5e;
+    animation: half-circle-spinner-animation 1s infinite alternate;
+  }
+
+  @keyframes half-circle-spinner-animation {
+    0% {
+      transform: rotate(0deg);
+
+    }
+    100%{
+      transform: rotate(360deg);
+    }
+  }
+@keyframes Loading{
+   
+    90%{
+        opacity: 0;
+        visibility: visible;
+    }
+    to{
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+    }
+}
